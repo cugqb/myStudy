@@ -14,6 +14,7 @@ public class ConsumerProducerTest {
         p1.setName("生产者1");
         c1.setName("消费者1");
         c2.setName("消费者2");
+        //测试github
         p1.start();
         c1.start();
         c2.start();
