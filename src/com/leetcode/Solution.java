@@ -1,13 +1,14 @@
 package com.leetcode;
-/*
- * @description:给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，
- * 写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
- * @param null
- * @return:
- * @author: 18234
- * @time: 2023/4/12 10:10
- */
+
 public class Solution {
+    /**
+     * @description: 二分查找
+     * @param nums
+     * @param target
+     * @return: int
+     * @author: 18234
+     * @time: 2023/5/3 20:14
+     */
     public int search(int[] nums, int target){
         if(target < nums[0] || target > nums[nums.length -1]){
             return -1;
@@ -28,7 +29,27 @@ public class Solution {
         return -1;
 
     }
+    /**
+     * @description: 移除元素
+     * 给定一个数组nums和一个值val,
+     * 你需要原地移除所有数值等于val的元素,并返回移除后的数组的新长度。
+     * @param nums
+     * @param val
+     * @return: int
+     * @author: 18234
+     * @time: 2023/5/3 20:39
+     */
+    public int removeElement(int[] nums, int val){
+       int slowIndex = 0;
+       for(int fastIndex = 0; fastIndex < nums.length; fastIndex++){
+           if(nums[fastIndex] != val){
+               nums[slowIndex] = nums[fastIndex];
+               slowIndex++;
+           }
+       }
+       return slowIndex;
 
+    }
 
 
 }
