@@ -51,5 +51,25 @@ public class Solution {
 
     }
 
+    public int[] sortedSquare(int[] nums) {
+        int right = nums.length - 1;
+        int left = 0;
+        int[] result = new int[nums.length];
+        int index = result.length - 1;
+        while (left <= right) {
+            if ((nums[right] * nums[right]) < (nums[left] * nums[left])) {
+                result[index--] = nums[left] * nums[left];
+                ++left;
+            } else {
+                result[index--] = nums[right] * nums[right];
+                --right;
+            }
+
+        }
+        return result;
+
+    }
+
+
 
 }
