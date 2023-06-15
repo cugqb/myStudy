@@ -9,16 +9,18 @@ import java.util.Arrays;
  */
 public class testSolution {
     public static void main(String[] args) {
-//        int[] arr = {1,2,5,7,8,2,3,2};
-//        Solution solution = new Solution();
-////        int search = solution.search(arr, 3);
-////        System.out.println(search);
-//        int index = solution.removeElement(arr, 2);
-//        System.out.println(index);
-        int[] arr = {-5, -1, 0, 1, 7};
+
         Solution solution = new Solution();
-        int[] result = solution.sortedSquare(arr);
-        System.out.println("result = " + Arrays.toString(result));
+        ListNode node5 = new ListNode(1, null);
+        ListNode node4 = new ListNode(2, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(4, node3);
+        ListNode head = new ListNode(5, node2);
+        ListNode listNode = solution.removeElements(head, 3);
+        while (listNode != null) {
+            System.out.println(listNode.val);
+            listNode = listNode.next;
+        }
 
     }
 
