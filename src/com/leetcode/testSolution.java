@@ -1,6 +1,9 @@
 package com.leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * @description:
@@ -10,16 +13,11 @@ import java.util.Arrays;
 public class testSolution {
     public static void main(String[] args) {
 
-        Solution solution = new Solution();
-        ListNode node5 = new ListNode(1, null);
-        ListNode node4 = new ListNode(2, node5);
-        ListNode node3 = new ListNode(3, node4);
-        ListNode node2 = new ListNode(4, node3);
-        ListNode head = new ListNode(5, node2);
-        ListNode listNode = solution.removeElements(head, 3);
-        while (listNode != null) {
-            System.out.println(listNode.val);
-            listNode = listNode.next;
+        List<Integer> myList = Arrays.asList(1, 2, 34, 4, 5);
+        Stream<Integer> stream = myList.stream().filter(value -> value > 2);
+        Integer[] a = stream.toArray(Integer[]::new);
+        for (Integer integer : a) {
+            System.out.println(integer);
         }
 
     }
